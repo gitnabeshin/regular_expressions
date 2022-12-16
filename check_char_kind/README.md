@@ -13,6 +13,9 @@
 # Run
 
 ```
+nabeshin@iMacNabeshin check_char_kind % sh test.sh "" ""                            
+inValid ID
+inValid NAME
 nabeshin@iMacNabeshin check_char_kind % sh test.sh 1 a
 valid ID 1
 valid NAME a
@@ -25,9 +28,12 @@ valid NAME abc_1
 nabeshin@iMacNabeshin check_char_kind % sh test.sh -1.0 "Abc Inc."
 inValid ID -1.0
 inValid NAME Abc Inc.
-nabeshin@iMacNabeshin check_char_kind % sh test.sh "1 2 3" "Abc Inc."
+nabeshin@iMacNabeshin check_char_kind % sh test.sh "1 2 3" "Abc Inc."                    
 inValid ID 1 2 3
-inValid NAME Abc Inc.
+valid NAME Abc Inc.
+nabeshin@iMacNabeshin check_char_kind % sh test.sh "0" "Abc Inc.[@jp](Tokyo,Shibuya)" 
+inValid ID 0
+valid NAME Abc Inc.[@jp](Tokyo,Shibuya)
 nabeshin@iMacNabeshin check_char_kind % sh test.sh "あ" "い"         
 inValid ID あ
 inValid NAME い

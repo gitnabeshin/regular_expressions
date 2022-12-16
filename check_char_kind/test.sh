@@ -12,7 +12,7 @@ else
 fi
 
 # check name consists with Hankaku Eisuji, Kigo, space
-CHECK=$(expr "${NAME}" : "[a-zA-Z0-9 :-@\[-\`{-~]*$" )
+CHECK=$(expr "${NAME}" : "[a-zA-Z0-9,. ;:-=@()\[-\`{-~]*$" )
 if [ ${CHECK} -eq 0 ]; then
     echo "inValid NAME ${NAME}"
 else
